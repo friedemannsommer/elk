@@ -28,6 +28,10 @@ COPY . ./
 # Run full install with every postinstall script ( This needs project file )
 RUN pnpm i --frozen-lockfile
 
+ENV NUXT_PUBLIC_TRANSLATE_API="https://translate.famsom.net/translate"
+ENV NUXT_PUBLIC_DEFAULT_SERVER="social.famsom.net"
+ENV NUXT_PUBLIC_SINGLE_INSTANCE="true"
+
 # Build
 RUN pnpm build
 
