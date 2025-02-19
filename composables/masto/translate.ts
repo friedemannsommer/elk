@@ -68,6 +68,7 @@ export async function translateText(text: string, from: string | null | undefine
   const regex = /<a[^>]*>.*?<\/a>/g
   try {
     const response = await ($fetch as any)(config.public.translateApi, {
+      credentials: 'include',
       method: 'POST',
       body: {
         q: text,
